@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 
-      REYTEK MASTER-BUILD 
-      Release: 1.3.7 (Production Verified)
-      Status: Clean Build / Vite Bundling Active
-    -->
     <title>Reytek | Alta Relojería Dental</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
@@ -23,6 +18,7 @@
             background-color: var(--silk-white);
             color: var(--deep-blue);
             overflow-x: hidden;
+            margin: 0;
         }
         .font-serif { font-family: 'Playfair Display', serif; }
         .kerning-luxury { letter-spacing: 0.3em; }
@@ -50,9 +46,7 @@
         ::-webkit-scrollbar-thumb { background: #E2E8F0; }
         ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
-        canvas {
-            touch-action: none;
-        }
+        canvas { touch-action: none; }
     </style>
 <script type="importmap">
 {
@@ -71,6 +65,7 @@
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- Ruta relativa para asegurar la resolución correcta por Vite -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
