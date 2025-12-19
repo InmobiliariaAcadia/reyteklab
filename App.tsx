@@ -1,4 +1,4 @@
-// Reytek Mastery Application - Build Version 1.2.2 (Deployment Fix)
+// Reytek Mastery Application - Build Version 1.2.5 (Stable Release)
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
