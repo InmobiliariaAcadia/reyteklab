@@ -31,14 +31,28 @@ const CrownModel = () => {
     shape.quadraticCurveTo(0, -0.7, -0.5, -0.5);
     shape.quadraticCurveTo(-0.7, 0, -0.5, 0.5);
     shape.quadraticCurveTo(0, 0.7, 0.5, 0.5);
-    const extrudeSettings = { steps: 2, depth: 0.8, bevelEnabled: true, bevelThickness: 0.2, bevelSize: 0.2, bevelOffset: 0, bevelSegments: 5 };
+    const extrudeSettings = { 
+      steps: 2, 
+      depth: 0.8, 
+      bevelEnabled: true, 
+      bevelThickness: 0.2, 
+      bevelSize: 0.2, 
+      bevelOffset: 0, 
+      bevelSegments: 5 
+    };
     return new THREE.ExtrudeGeometry(shape, extrudeSettings);
   }, []);
 
   return (
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
       <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
-        <MeshDistortMaterial color="#f8fafc" roughness={0.05} metalness={0.1} distort={0.05} speed={2} />
+        <MeshDistortMaterial 
+          color="#f8fafc" 
+          roughness={0.05} 
+          metalness={0.1} 
+          distort={0.05} 
+          speed={2} 
+        />
       </mesh>
       <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
         <meshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
