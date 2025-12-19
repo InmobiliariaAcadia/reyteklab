@@ -1,4 +1,4 @@
-// Reytek Mastery Application - Version 1.1.2
+// Reytek Mastery Application - Build Version 1.2.0 (Stable)
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
