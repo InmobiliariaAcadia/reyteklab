@@ -90,7 +90,7 @@ export const DigitalSection: React.FC = () => {
           <div className="lg:col-span-7 relative">
             <div className="aspect-square bg-slate-50 relative border border-slate-100 overflow-hidden group">
                <Suspense fallback={<ModelLoading />}>
-                <Canvas shadows dpr={[1, 2]}>
+                <Canvas shadows dpr={[1, 2]} style={{ touchAction: 'none' }}>
                   <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={35} />
                   <ambientLight intensity={1.5} />
                   <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
