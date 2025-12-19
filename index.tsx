@@ -1,4 +1,4 @@
-// Reytek Entry Point - V 1.2.1
+// Reytek Entry Point - V 1.2.3 Stable
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
