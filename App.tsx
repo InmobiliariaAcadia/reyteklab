@@ -1,4 +1,4 @@
-
+// Reytek Mastery Application - Version 1.1.2
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
