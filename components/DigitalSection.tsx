@@ -3,12 +3,18 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, Float, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Fix for R3F intrinsic element type errors by defining them as typed constants to bypass JSX.IntrinsicElements checks
+const Mesh = 'mesh' as any;
+const MeshBasicMaterial = 'meshBasicMaterial' as any;
+const AmbientLight = 'ambientLight' as any;
+const SpotLight = 'spotLight' as any;
+
 const ModelLoading = () => (
   <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-20">
     <div className="w-12 h-[1px] bg-slate-100 relative overflow-hidden">
       <div className="absolute inset-0 bg-slate-900 animate-loading-bar"></div>
     </div>
-    <span className="text-[7px] uppercase tracking-[0.5em] text-slate-400 mt-4 animate-pulse">Scanning Precision...</span>
+    <span className="text-[7px] uppercase tracking-[0.5em] text-slate-400 mt-4 animate-pulse">Escaneando Precisión...</span>
     <style>{`
       @keyframes loadingBar {
         0% { transform: translateX(-100%); }
@@ -44,8 +50,8 @@ const CrownModel = () => {
 
   return (
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-      {/* @ts-ignore - Fix: Intrinsic element 'mesh' type missing in current environment */}
-      <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
+      {/* Fix: Use Mesh constant to resolve Property 'mesh' does not exist on type 'JSX.IntrinsicElements' */}
+      <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
         <MeshDistortMaterial 
           color="#f8fafc" 
           roughness={0.05} 
@@ -53,14 +59,11 @@ const CrownModel = () => {
           distort={0.05} 
           speed={2} 
         />
-      {/* @ts-ignore - Fix: Intrinsic element 'mesh' closing tag type recognition */}
-      </mesh>
-      {/* @ts-ignore - Fix: Intrinsic element 'mesh' type recognition */}
-      <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
-        {/* @ts-ignore - Fix: Intrinsic element 'meshBasicMaterial' type recognition */}
-        <meshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
-      {/* @ts-ignore - Fix: Intrinsic element 'mesh' closing tag type recognition */}
-      </mesh>
+      </Mesh>
+      {/* Fix: Use Mesh and MeshBasicMaterial constants to resolve intrinsic element type errors */}
+      <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
+        <MeshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
+      </Mesh>
     </Float>
   );
 };
@@ -71,10 +74,10 @@ export const DigitalSection: React.FC = () => {
       <div className="container mx-auto px-8">
         <div className="grid lg:grid-cols-12 gap-24 items-center">
           <div className="lg:col-span-5 relative z-10">
-            <h2 className="text-[10px] uppercase tracking-[0.6em] text-slate-400 font-bold mb-10 italic">Advanced Engineering</h2>
+            <h2 className="text-[10px] uppercase tracking-[0.6em] text-slate-400 font-bold mb-10 italic">Ingeniería Avanzada</h2>
             <h3 className="text-5xl md:text-6xl font-serif text-slate-900 mb-12 leading-tight">
               Ingeniería <br />
-              <span className="italic font-normal text-slate-400">Invisibile.</span>
+              <span className="italic font-normal text-slate-400">Invisible.</span>
             </h3>
             <p className="text-sm text-slate-500 font-light leading-relaxed mb-16 max-w-md">
               La perfección no es un accidente, es el resultado de un flujo digital que elimina la vibración humana para entregar una precisión de micras.
@@ -86,8 +89,8 @@ export const DigitalSection: React.FC = () => {
                 <span className="text-[7px] uppercase tracking-[0.3em] text-slate-400 font-bold">Tolerancia Máxima</span>
               </div>
               <div className="space-y-2">
-                <span className="text-[20px] font-serif text-slate-900 block">5-Axis</span>
-                <span className="text-[7px] uppercase tracking-[0.3em] text-slate-400 font-bold">Milling Protocol</span>
+                <span className="text-[20px] font-serif text-slate-900 block">5-Ejes</span>
+                <span className="text-[7px] uppercase tracking-[0.3em] text-slate-400 font-bold">Protocolo de Fresado</span>
               </div>
             </div>
           </div>
@@ -97,10 +100,10 @@ export const DigitalSection: React.FC = () => {
                <Suspense fallback={<ModelLoading />}>
                 <Canvas shadows dpr={[1, 2]} style={{ touchAction: 'none' }}>
                   <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={35} />
-                  {/* @ts-ignore - Fix: Intrinsic element 'ambientLight' type recognition */}
-                  <ambientLight intensity={1.5} />
-                  {/* @ts-ignore - Fix: Intrinsic element 'spotLight' type recognition */}
-                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
+                  {/* Fix: Use AmbientLight constant to resolve Property 'ambientLight' does not exist on type 'JSX.IntrinsicElements' */}
+                  <AmbientLight intensity={1.5} />
+                  {/* Fix: Use SpotLight constant to resolve Property 'spotLight' does not exist on type 'JSX.IntrinsicElements' */}
+                  <SpotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
                   <CrownModel />
                   <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} far={4.5} />
                   <Environment preset="city" />
@@ -110,8 +113,8 @@ export const DigitalSection: React.FC = () => {
               
               <div className="absolute top-8 left-8 pointer-events-none">
                  <div className="text-[7px] uppercase tracking-[0.4em] text-slate-400 border-l border-slate-900 pl-4 py-1">
-                    Reytek Simulation Core v.4.0 <br/>
-                    Property of Mastery Lab
+                    Reytek Simulation Core v.5.0 <br/>
+                    Propiedad de Mastery Lab
                  </div>
               </div>
             </div>
