@@ -6,8 +6,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    // Eliminamos rollupOptions.external para asegurar que todas las dependencias
-    // se incluyan en el build final, evitando errores de "módulo no encontrado" en el navegador.
     sourcemap: false,
     minify: 'terser',
     rollupOptions: {
@@ -18,9 +16,5 @@ export default defineConfig({
         }
       }
     }
-  },
-  server: {
-    port: 3000,
-    strictPort: true
   }
 });
