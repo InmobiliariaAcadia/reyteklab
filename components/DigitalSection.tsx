@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, Float, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Fix for R3F intrinsic element type errors by defining them as typed constants to bypass JSX.IntrinsicElements checks
+// Alias para evitar errores de tipos intrínsecos en JSX
 const Mesh = 'mesh' as any;
 const MeshBasicMaterial = 'meshBasicMaterial' as any;
 const AmbientLight = 'ambientLight' as any;
@@ -50,7 +50,6 @@ const CrownModel = () => {
 
   return (
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-      {/* Fix: Use Mesh constant to resolve Property 'mesh' does not exist on type 'JSX.IntrinsicElements' */}
       <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
         <MeshDistortMaterial 
           color="#f8fafc" 
@@ -60,7 +59,6 @@ const CrownModel = () => {
           speed={2} 
         />
       </Mesh>
-      {/* Fix: Use Mesh and MeshBasicMaterial constants to resolve intrinsic element type errors */}
       <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
         <MeshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
       </Mesh>
@@ -100,9 +98,7 @@ export const DigitalSection: React.FC = () => {
                <Suspense fallback={<ModelLoading />}>
                 <Canvas shadows dpr={[1, 2]} style={{ touchAction: 'none' }}>
                   <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={35} />
-                  {/* Fix: Use AmbientLight constant to resolve Property 'ambientLight' does not exist on type 'JSX.IntrinsicElements' */}
                   <AmbientLight intensity={1.5} />
-                  {/* Fix: Use SpotLight constant to resolve Property 'spotLight' does not exist on type 'JSX.IntrinsicElements' */}
                   <SpotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
                   <CrownModel />
                   <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} far={4.5} />
