@@ -1,61 +1,139 @@
-
 import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-32 border-t border-slate-100">
+    <footer className="py-24" style={{ backgroundColor: '#050a12' }} id="contacto">
       <div className="container mx-auto px-8">
-        <div className="grid md:grid-cols-12 gap-20 mb-32">
-          <div className="md:col-span-5">
-            <h4 className="text-slate-900 font-serif font-bold text-3xl tracking-[0.2em] mb-8">REYTEK</h4>
-            <p className="text-slate-400 text-xs font-light leading-relaxed max-w-xs mb-10 italic">
-              "Nuestro Legado No es Nuestro Ancla, es Nuestra Plataforma."
+        <div className="grid md:grid-cols-12 gap-16 mb-16">
+          {/* Brand Column */}
+          <div className="md:col-span-4">
+            <h4 className="font-serif text-3xl font-bold tracking-[0.2em] mb-6" style={{ color: 'var(--gold)' }}>
+              REYTEK
+            </h4>
+            <p className="text-sm font-light leading-relaxed mb-8 max-w-sm" style={{ color: 'var(--cream-dark)' }}>
+              El laboratorio dental de los especialistas.<br />
+              40 años creando sonrisas perfectas en México.
             </p>
-            <p className="text-slate-400 text-[10px] font-light leading-relaxed max-w-xs mb-10">
-              Desde 1984, custodiando la excelencia técnica y estética en la rehabilitación oral. 40 años de reputación adaptados a un nuevo mundo digital.
+            <p className="text-xs font-light mb-8" style={{ color: 'var(--text-light)' }}>
+              Certificado ADA • NBC • PTC
             </p>
-            <div className="flex space-x-8">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">Instagram</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">LinkedIn</a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">YouTube</a>
-            </div>
           </div>
-          
-          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
-            <div>
-              <h5 className="text-slate-900 text-[9px] uppercase tracking-[0.3em] font-bold mb-10">Estructura</h5>
-              <ul className="text-slate-400 text-[9px] uppercase tracking-[0.2em] space-y-5 font-light">
-                <li>CDMX Atelier</li>
-                <li>Mérida Studio</li>
-                <li>Logística Nacional</li>
-                <li>Seguimiento de Casos</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="text-slate-900 text-[9px] uppercase tracking-[0.3em] font-bold mb-10">Socio Clínico</h5>
-              <ul className="text-slate-400 text-[9px] uppercase tracking-[0.2em] space-y-5 font-light">
-                <li>Guía de Preparación</li>
-                <li>Hoja de Receta Digital</li>
-                <li>Protocolo de Ajuste</li>
-                <li>Garantía Reytek</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="text-slate-900 text-[9px] uppercase tracking-[0.3em] font-bold mb-10">Contacto</h5>
-              <ul className="text-slate-400 text-[9px] uppercase tracking-[0.2em] space-y-5 font-light">
-                <li>socios@reytek.clinic</li>
-                <li>01 800 PRECISN</li>
-                <li>Horario Técnico: <br/>09:00 - 18:00</li>
-              </ul>
-            </div>
+
+          {/* Products */}
+          <div className="md:col-span-2">
+            <h5 className="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-white">
+              Productos
+            </h5>
+            <ul className="space-y-3 text-sm font-light" style={{ color: 'var(--cream-dark)' }}>
+              <li>Alta Estética</li>
+              <li>Libres de Metal</li>
+              <li>Sobre Implante</li>
+              <li>Removibles</li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="md:col-span-3">
+            <h5 className="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-white">
+              Recursos
+            </h5>
+            <ul className="space-y-3 text-sm font-light" style={{ color: 'var(--cream-dark)' }}>
+              <li>
+                <a href="#" className="hover:opacity-70 transition-premium">
+                  Descargar Receta
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-70 transition-premium">
+                  Lista de Precios
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-70 transition-premium">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:opacity-70 transition-premium">
+                  Facturación
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h5 className="text-xs uppercase tracking-[0.2em] font-bold mb-6 text-white">
+              Contacto
+            </h5>
+            <ul className="space-y-3 text-sm font-light" style={{ color: 'var(--cream-dark)' }}>
+              <li>
+                <a href="mailto:info@reyteklab.com" className="hover:opacity-70 transition-premium">
+                  info@reyteklab.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+529999446160" className="hover:opacity-70 transition-premium">
+                  (999) 944-6160
+                </a>
+              </li>
+              <li className="pt-2">
+                <span className="text-xs opacity-60">Mérida, Yucatán</span>
+              </li>
+              <li>
+                <span className="text-xs opacity-60">CDMX</span>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        <div className="pt-12 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.4em] text-slate-300 font-medium">
-          <p>© 2024 REYTEK PRECISION DENTAL. 40 AÑOS DEFINIENDO EL FUTURO.</p>
-          <div className="flex space-x-12 mt-8 md:mt-0">
-            <span className="text-slate-300">Aviso de Privacidad</span>
-            <span className="text-slate-300">Términos Técnicos</span>
+
+        {/* Divider */}
+        <div className="h-px mb-8" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}></div>
+
+        {/* Bottom */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs font-light" style={{ color: 'var(--text-light)' }}>
+            © 2025 REYTEK LABORATORIO DENTAL. 40 AÑOS DEFINIENDO EL FUTURO.
+          </p>
+
+          {/* Social Links */}
+          <div className="flex items-center space-x-6">
+            <a
+              href="https://www.facebook.com/Reyteklab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-wider font-medium transition-premium hover:opacity-70"
+              style={{ color: 'var(--gold)' }}
+            >
+              FB
+            </a>
+            <a
+              href="https://www.instagram.com/reyteklab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-wider font-medium transition-premium hover:opacity-70"
+              style={{ color: 'var(--gold)' }}
+            >
+              IG
+            </a>
+            <a
+              href="https://mx.linkedin.com/company/laboratorio-dental-reytek"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-wider font-medium transition-premium hover:opacity-70"
+              style={{ color: 'var(--gold)' }}
+            >
+              LI
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCEQXDxzChUCXDYdnBFNHZfg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs uppercase tracking-wider font-medium transition-premium hover:opacity-70"
+              style={{ color: 'var(--gold)' }}
+            >
+              YT
+            </a>
           </div>
         </div>
       </div>
