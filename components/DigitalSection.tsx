@@ -3,12 +3,6 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, Float, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Alias para evitar errores de tipos intrínsecos en JSX
-const Mesh = 'mesh' as any;
-const MeshBasicMaterial = 'meshBasicMaterial' as any;
-const AmbientLight = 'ambientLight' as any;
-const SpotLight = 'spotLight' as any;
-
 const ModelLoading = () => (
   <div className="absolute inset-0 flex flex-col items-center justify-center bg-white z-20">
     <div className="w-12 h-[1px] bg-slate-100 relative overflow-hidden">
@@ -50,18 +44,18 @@ const CrownModel = () => {
 
   return (
     <Float speed={1.5} rotationIntensity={0.5} floatIntensity={0.5}>
-      <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
-        <MeshDistortMaterial 
-          color="#f8fafc" 
-          roughness={0.05} 
-          metalness={0.1} 
-          distort={0.05} 
-          speed={2} 
+      <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.2}>
+        <MeshDistortMaterial
+          color="#f8fafc"
+          roughness={0.05}
+          metalness={0.1}
+          distort={0.05}
+          speed={2}
         />
-      </Mesh>
-      <Mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
-        <MeshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
-      </Mesh>
+      </mesh>
+      <mesh geometry={crownGeometry} rotation={[Math.PI / 2.5, 0, 0]} scale={1.205}>
+        <meshBasicMaterial color="#94a3b8" wireframe opacity={0.05} transparent />
+      </mesh>
     </Float>
   );
 };
@@ -98,8 +92,8 @@ export const DigitalSection: React.FC = () => {
                <Suspense fallback={<ModelLoading />}>
                 <Canvas shadows dpr={[1, 2]} style={{ touchAction: 'none' }}>
                   <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={35} />
-                  <AmbientLight intensity={1.5} />
-                  <SpotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
+                  <ambientLight intensity={1.5} />
+                  <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={10} />
                   <CrownModel />
                   <ContactShadows position={[0, -1.5, 0]} opacity={0.4} scale={10} blur={2} far={4.5} />
                   <Environment preset="city" />
