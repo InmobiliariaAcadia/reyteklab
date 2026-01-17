@@ -15,9 +15,9 @@ export const Footer: React.FC = () => {
               Desde 1984, custodiando la excelencia técnica y estética en la rehabilitación oral. 40 años de reputación adaptados a un nuevo mundo digital.
             </p>
             <div className="flex space-x-8">
-              <a href="#" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">Instagram</a>
-              <a href="#" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">LinkedIn</a>
-              <a href="#" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">YouTube</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">Instagram</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">LinkedIn</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-900 transition-colors text-[9px] uppercase tracking-widest font-bold">YouTube</a>
             </div>
           </div>
           
@@ -25,19 +25,19 @@ export const Footer: React.FC = () => {
             <div>
               <h5 className="text-slate-900 text-[9px] uppercase tracking-[0.3em] font-bold mb-10">Estructura</h5>
               <ul className="text-slate-400 text-[9px] uppercase tracking-[0.2em] space-y-5 font-light">
-                <li className="hover:text-slate-900 cursor-pointer">CDMX Atelier</li>
-                <li className="hover:text-slate-900 cursor-pointer">Mérida Studio</li>
-                <li className="hover:text-slate-900 cursor-pointer">Logística Nacional</li>
-                <li className="hover:text-slate-900 cursor-pointer">Seguimiento de Casos</li>
+                <li>CDMX Atelier</li>
+                <li>Mérida Studio</li>
+                <li>Logística Nacional</li>
+                <li>Seguimiento de Casos</li>
               </ul>
             </div>
             <div>
               <h5 className="text-slate-900 text-[9px] uppercase tracking-[0.3em] font-bold mb-10">Socio Clínico</h5>
               <ul className="text-slate-400 text-[9px] uppercase tracking-[0.2em] space-y-5 font-light">
-                <li className="hover:text-slate-900 cursor-pointer">Guía de Preparación</li>
-                <li className="hover:text-slate-900 cursor-pointer">Hoja de Receta Digital</li>
-                <li className="hover:text-slate-900 cursor-pointer">Protocolo de Ajuste</li>
-                <li className="hover:text-slate-900 cursor-pointer">Garantía Reytek</li>
+                <li>Guía de Preparación</li>
+                <li>Hoja de Receta Digital</li>
+                <li>Protocolo de Ajuste</li>
+                <li>Garantía Reytek</li>
               </ul>
             </div>
             <div>
@@ -54,8 +54,8 @@ export const Footer: React.FC = () => {
         <div className="pt-12 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center text-[8px] uppercase tracking-[0.4em] text-slate-300 font-medium">
           <p>© 2024 REYTEK PRECISION DENTAL. 40 AÑOS DEFINIENDO EL FUTURO.</p>
           <div className="flex space-x-12 mt-8 md:mt-0">
-            <a href="#" className="hover:text-slate-900 transition-colors">Aviso de Privacidad</a>
-            <a href="#" className="hover:text-slate-900 transition-colors">Términos Técnicos</a>
+            <span className="text-slate-300">Aviso de Privacidad</span>
+            <span className="text-slate-300">Términos Técnicos</span>
           </div>
         </div>
       </div>

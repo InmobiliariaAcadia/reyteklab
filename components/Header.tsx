@@ -13,7 +13,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       }`}
     >
       <div className="container mx-auto px-8 flex justify-between items-center">
-        <div className="flex flex-col group cursor-pointer">
+        <div className="flex flex-col group">
           <span className="text-xl font-serif font-bold tracking-[0.4em] text-slate-900 group-hover:text-slate-500 transition-colors">REYTEK</span>
           <span className="text-[8px] uppercase tracking-[0.6em] text-slate-400 mt-1 font-light italic">Estándar de Autoridad</span>
         </div>
@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           </button>
         </nav>
 
-        <button className="lg:hidden text-slate-900">
+        <button className="lg:hidden text-slate-900" aria-label="Toggle mobile menu">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 8h16M4 16h16" />
           </svg>
