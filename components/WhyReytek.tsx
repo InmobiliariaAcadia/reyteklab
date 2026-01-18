@@ -1,8 +1,10 @@
 import React from 'react';
+import { Icons } from './Icons';
 
 export const WhyReytek: React.FC = () => {
   const reasons = [
     {
+      icon: Icons.Award,
       title: 'Técnicos Certificados',
       items: [
         'Únicos 2 CDT en México certificados por NBC',
@@ -11,6 +13,7 @@ export const WhyReytek: React.FC = () => {
       ]
     },
     {
+      icon: Icons.Shield,
       title: 'Materiales Certificados ADA',
       items: [
         '100% materiales American Dental Association',
@@ -19,6 +22,7 @@ export const WhyReytek: React.FC = () => {
       ]
     },
     {
+      icon: Icons.Support,
       title: 'Soporte Técnico Real',
       items: [
         'Habla con técnicos, no con máquinas',
@@ -65,52 +69,55 @@ export const WhyReytek: React.FC = () => {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {reasons.map((reason, index) => (
-            <div
-              key={index}
-              className="group p-10 relative transition-premium hover:-translate-y-2"
-              style={{ backgroundColor: 'var(--white)' }}
-            >
-              {/* Top border - appears on hover */}
+          {reasons.map((reason, index) => {
+            const IconComponent = reason.icon;
+            return (
               <div
-                className="absolute top-0 left-0 right-0 h-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                style={{ backgroundColor: 'var(--gold)' }}
-              ></div>
-
-              {/* Number */}
-              <div
-                className="font-serif text-6xl opacity-10 mb-6"
-                style={{ color: 'var(--navy)' }}
+                key={index}
+                className="group p-10 relative transition-premium hover:-translate-y-2"
+                style={{ backgroundColor: 'var(--white)' }}
               >
-                0{index + 1}
+                {/* Top border - appears on hover */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                  style={{ backgroundColor: 'var(--gold)' }}
+                ></div>
+
+                {/* Icon */}
+                <div
+                  className="mb-6 transition-premium group-hover:scale-110"
+                  style={{ color: 'var(--gold)' }}
+                >
+                  <IconComponent />
+                </div>
+
+                {/* Title */}
+                <h3
+                  className="font-serif text-3xl mb-8 leading-tight"
+                  style={{ color: 'var(--navy)' }}
+                >
+                  {reason.title}
+                </h3>
+
+                {/* Items */}
+                <ul className="space-y-4">
+                  {reason.items.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start text-base font-light"
+                      style={{ color: 'var(--text)' }}
+                    >
+                      <span
+                        className="inline-block w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0"
+                        style={{ backgroundColor: 'var(--gold)' }}
+                      ></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              {/* Title */}
-              <h3
-                className="font-serif text-3xl mb-8 leading-tight"
-                style={{ color: 'var(--navy)' }}
-              >
-                {reason.title}
-              </h3>
-
-              {/* Items */}
-              <ul className="space-y-4">
-                {reason.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start text-base font-light"
-                    style={{ color: 'var(--text)' }}
-                  >
-                    <span
-                      className="inline-block w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0"
-                      style={{ backgroundColor: 'var(--gold)' }}
-                    ></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

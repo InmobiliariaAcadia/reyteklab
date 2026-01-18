@@ -3,9 +3,22 @@ import React from 'react';
 export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--navy)' }}>
-      {/* Subtle texture overlay */}
+      {/* Custom precision pattern overlay */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 technical-grid"></div>
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="precision-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+              <circle cx="50" cy="50" r="20" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+              <circle cx="50" cy="50" r="10" stroke="currentColor" strokeWidth="0.5" fill="none"/>
+              <line x1="50" y1="20" x2="50" y2="25" stroke="currentColor" strokeWidth="0.5"/>
+              <line x1="50" y1="75" x2="50" y2="80" stroke="currentColor" strokeWidth="0.5"/>
+              <line x1="20" y1="50" x2="25" y2="50" stroke="currentColor" strokeWidth="0.5"/>
+              <line x1="75" y1="50" x2="80" y2="50" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#precision-pattern)" className="text-white"/>
+        </svg>
       </div>
 
       {/* Gradient overlay for depth */}
