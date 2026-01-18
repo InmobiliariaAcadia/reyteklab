@@ -1,47 +1,97 @@
-
 import React from 'react';
 
 export const CTASection: React.FC = () => {
   return (
-    <section className="py-48 bg-white overflow-hidden relative">
-      <div className="container mx-auto px-8 relative z-10 text-center">
-        <div className="silver-line mb-20 w-1/2 mx-auto"></div>
-        
-        <div className="max-w-4xl mx-auto">
-          <h3 className="text-5xl md:text-7xl font-serif text-slate-900 mb-12">
-            Inicie su legado con <br />
-            <span className="italic font-normal">autoridad técnica.</span>
-          </h3>
-          <p className="text-slate-400 text-sm mb-12 max-w-xl mx-auto font-light leading-relaxed kerning-luxury uppercase">
-            Únase a la élite de especialistas que entienden que su reputación es su activo más valioso.
-          </p>
-          
-          <div className="inline-block bg-slate-50 border border-slate-100 p-10 mb-16 rounded-sm max-w-2xl">
-            <span className="block text-[10px] uppercase tracking-[0.4em] text-slate-400 mb-4">Protocolo de Bienvenida 2024</span>
-            <span className="block text-2xl font-serif text-slate-900 mb-4">Entrevista de Alineación Clínica</span>
-            <p className="text-[10px] text-slate-400 leading-relaxed font-light uppercase tracking-[0.2em]">
-              Un proceso exhaustivo de cinco puntos (oclusión, contactos, estética) para asegurar que cada caso que recibamos sea una obra maestra compartida.
-            </p>
+    <section
+      className="py-32 relative overflow-hidden gold-glow"
+      style={{ backgroundColor: 'var(--navy)' }}
+    >
+      {/* Decorative background */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 technical-grid"></div>
+      </div>
+
+      {/* Subtle gold glow effect */}
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          background: 'radial-gradient(circle at center, var(--gold) 0%, transparent 70%)'
+        }}
+      ></div>
+
+      <div className="container mx-auto px-8 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Header */}
+          <div className="flex items-center justify-center space-x-4 mb-8">
+            <div className="w-12 h-px" style={{ backgroundColor: 'var(--gold)' }}></div>
+            <span
+              className="text-xs uppercase tracking-[0.3em] font-medium"
+              style={{ color: 'var(--gold)' }}
+            >
+              Comience Hoy
+            </span>
+            <div className="w-12 h-px" style={{ backgroundColor: 'var(--gold)' }}></div>
           </div>
-          
-          <div className="flex flex-col items-center space-y-12">
-            <button className="group bg-slate-900 text-white px-16 py-8 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-slate-800 transition-all hover:shadow-[0_40px_80px_rgba(15,23,42,0.15)]">
-              Agendar Consultoría Privada
-            </button>
-            
-            <div className="flex space-x-12 opacity-30 grayscale items-center">
-              <span className="text-[8px] tracking-[0.4em] font-bold uppercase">40 Years Mastery</span>
-              <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-              <span className="text-[8px] tracking-[0.4em] font-bold uppercase">Clinical Partner</span>
-              <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-              <span className="text-[8px] tracking-[0.4em] font-bold uppercase">Zero-Adjust Guarantee</span>
-            </div>
+
+          {/* Main headline */}
+          <h2
+            className="font-serif text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight"
+          >
+            ¿Listo para trabajar<br />con los mejores?
+          </h2>
+
+          {/* Subheadline */}
+          <p
+            className="text-lg md:text-xl font-light mb-16 leading-relaxed"
+            style={{ color: 'var(--cream-dark)' }}
+          >
+            Únase a los especialistas que confían en Reytek<br className="hidden md:block" />
+            para sus casos más importantes.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+            {/* Primary CTA - WhatsApp */}
+            <a
+              href="https://wa.link/p5wky3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden px-12 py-6 text-sm uppercase tracking-[0.2em] font-bold transition-premium"
+              style={{ backgroundColor: 'var(--gold)', color: 'var(--navy)' }}
+            >
+              <span className="relative z-10">Contactar por WhatsApp</span>
+              <div
+                className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+                style={{ backgroundColor: 'var(--gold-light)' }}
+              ></div>
+            </a>
+
+            {/* Secondary CTA - Phone */}
+            <a
+              href="tel:+529999446160"
+              className="px-12 py-6 text-sm uppercase tracking-[0.2em] font-bold border-2 transition-premium hover:bg-white/10"
+              style={{ color: 'var(--gold)', borderColor: 'var(--gold)' }}
+            >
+              (999) 944-6160
+            </a>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-6 opacity-50">
+            <span className="text-xs uppercase tracking-wider text-white">
+              40 Años de Excelencia
+            </span>
+            <div className="w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--gold)' }}></div>
+            <span className="text-xs uppercase tracking-wider text-white">
+              5M+ Sonrisas
+            </span>
+            <div className="w-1 h-1 rounded-full" style={{ backgroundColor: 'var(--gold)' }}></div>
+            <span className="text-xs uppercase tracking-wider text-white">
+              2 CDT Certificados
+            </span>
           </div>
         </div>
       </div>
-
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-[1px] bg-slate-100"></div>
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-[1px] bg-slate-100"></div>
     </section>
   );
 };

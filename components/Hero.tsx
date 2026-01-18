@@ -1,46 +1,81 @@
-
 import React from 'react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=90&w=2000&grayscale=true" 
-          alt="Luxury Clinical Environment" 
-          className="w-full h-full object-cover opacity-[0.12] animate-zoom"
-        />
-        <div className="absolute inset-0 technical-grid opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'var(--navy)' }}>
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 technical-grid"></div>
       </div>
 
-      <div className="container mx-auto px-8 relative z-10 text-center">
-        <div className="inline-flex items-center space-x-6 mb-12">
-          <div className="w-12 h-[1px] bg-slate-200"></div>
-          <span className="text-[9px] uppercase tracking-[0.6em] text-slate-400 font-bold italic">La Alta Costura de la Odontología</span>
-          <div className="w-12 h-[1px] bg-slate-200"></div>
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+
+      {/* Content */}
+      <div className="container mx-auto px-8 relative z-10 text-center animate-fade-in-up">
+        {/* Eyebrow with decorative lines */}
+        <div className="flex items-center justify-center space-x-6 mb-12">
+          <div className="w-16 h-px" style={{ background: 'var(--gold)' }}></div>
+          <span
+            className="text-xs uppercase tracking-[0.3em] font-medium"
+            style={{ color: 'var(--gold)' }}
+          >
+            Desde 1987
+          </span>
+          <div className="w-16 h-px" style={{ background: 'var(--gold)' }}></div>
         </div>
-        
-        <h1 className="text-6xl md:text-[8rem] font-serif text-slate-900 mb-10 leading-[0.9] tracking-tight">
-          Reytek <br />
-          <span className="italic font-normal text-slate-400">Mastery.</span>
+
+        {/* Main headline */}
+        <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[1.1] tracking-tight max-w-5xl mx-auto">
+          El Laboratorio de <br />
+          <span className="italic font-light" style={{ color: 'var(--gold-light)' }}>
+            los Especialistas
+          </span>
         </h1>
-        
-        <p className="text-[10px] md:text-xs text-slate-500 font-light max-w-2xl mx-auto mb-20 kerning-luxury uppercase leading-loose">
-          Definiendo el calibre de la rehabilitación oral premium. <br />40 años custodiando el prestigio de los mejores especialistas.
+
+        {/* Subheadline */}
+        <p
+          className="text-base md:text-lg font-light max-w-3xl mx-auto mb-16 leading-relaxed"
+          style={{ color: 'var(--cream-dark)' }}
+        >
+          Más de 5,000,000 de sonrisas y casi 40 años nos respaldan.<br className="hidden md:block" />
+          El estándar que otros intentan alcanzar.
         </p>
-        
-        <div className="flex flex-col items-center">
-          <button className="group relative overflow-hidden bg-slate-900 text-white px-14 py-7 text-[10px] uppercase tracking-[0.4em] font-semibold transition-all hover:shadow-[0_30px_60px_rgba(15,23,42,0.1)]">
-            <span className="relative z-10">Solicitar Protocolo de Socio</span>
-            <div className="absolute inset-0 bg-slate-700 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-          </button>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          {/* Primary CTA - WhatsApp */}
+          <a
+            href="https://wa.link/p5wky3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative overflow-hidden px-10 py-5 text-sm uppercase tracking-[0.2em] font-semibold transition-premium"
+            style={{ backgroundColor: 'var(--gold)', color: 'var(--navy)' }}
+          >
+            <span className="relative z-10">Hablar con un Asesor</span>
+            <div
+              className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+              style={{ backgroundColor: 'var(--gold-light)' }}
+            ></div>
+          </a>
+
+          {/* Secondary CTA */}
+          <a
+            href="#diferencia"
+            className="px-10 py-5 text-sm uppercase tracking-[0.2em] font-semibold border-2 transition-premium hover:bg-white/10"
+            style={{ color: 'var(--gold)', borderColor: 'var(--gold)' }}
+          >
+            Conocer la Diferencia →
+          </a>
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4">
-        <span className="text-[8px] uppercase tracking-[0.4em] text-slate-300">Explorar Calidad Perpetua</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-slate-200 to-transparent"></div>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-4 animate-fade-in-up">
+        <span className="text-xs uppercase tracking-[0.3em] opacity-40 text-white">
+          Descubrir Excelencia
+        </span>
+        <div className="w-px h-16 bg-gradient-to-b from-white/30 to-transparent"></div>
       </div>
     </section>
   );

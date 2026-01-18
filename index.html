@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reytek | Alta Relojería Dental</title>
+    <title>Reytek | El Laboratorio de los Especialistas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@100;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --deep-blue: #0F172A;
-            --silver-mercury: #E2E8F0;
-            --silk-white: #FFFFFF;
-            --sand: #F8F9FA;
+            --navy: #0a1628;
+            --navy-light: #1a2d4a;
+            --gold: #c9a962;
+            --gold-light: #dfc78a;
+            --cream: #faf9f7;
+            --cream-dark: #f0ede8;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --text-light: #64748b;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--silk-white);
-            color: var(--deep-blue);
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background-color: var(--cream);
+            color: var(--text);
             overflow-x: hidden;
             margin: 0;
         }
-        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+        .font-sans { font-family: 'Outfit', -apple-system, sans-serif; }
         .kerning-luxury { letter-spacing: 0.3em; }
         .glass-effect {
             background: rgba(255, 255, 255, 0.9);
@@ -40,11 +46,31 @@
             100% { transform: scale(1.08); }
         }
         .animate-zoom { animation: subtle-zoom 25s infinite alternate ease-in-out; }
-        
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+
+        .gold-glow {
+            box-shadow: 0 0 40px rgba(201, 169, 98, 0.15);
+        }
+
+        .transition-premium {
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
         ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #FFFFFF; }
-        ::-webkit-scrollbar-thumb { background: #E2E8F0; }
-        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
 
         canvas { touch-action: none; }
     </style>

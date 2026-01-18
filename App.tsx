@@ -1,15 +1,17 @@
-// Reytek Mastery Application - Build Version 1.2.5 (Stable Release)
+// Reytek Premium - The Laboratory of Specialists
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { HeritageSection } from './components/HeritageSection';
-import { MasteryGallery } from './components/MasteryGallery';
-import { StrategySection } from './components/StrategySection';
-import { ValueSection } from './components/ValueSection';
+import { TrustBar } from './components/TrustBar';
+import { WhyReytek } from './components/WhyReytek';
+import { Difference } from './components/Difference';
+import { Testimonial } from './components/Testimonial';
+import { Process } from './components/Process';
 import { DigitalSection } from './components/DigitalSection';
-import { AuthoritySection } from './components/AuthoritySection';
+import { Certifications } from './components/Certifications';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
+import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,19 +25,21 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white selection:bg-[#1A2A40] selection:text-white">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--cream)' }}>
       <Header isScrolled={scrolled} />
       <main>
         <Hero />
-        <HeritageSection />
-        <MasteryGallery />
-        <StrategySection />
-        <ValueSection />
+        <TrustBar />
+        <WhyReytek />
+        <Difference />
+        <Testimonial />
+        <Process />
         <DigitalSection />
-        <AuthoritySection />
+        <Certifications />
         <CTASection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
