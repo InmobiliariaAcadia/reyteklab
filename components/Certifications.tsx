@@ -1,5 +1,18 @@
 import React from 'react';
 
+const CertBadge: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div className="relative w-20 h-20 mx-auto mb-4">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" stroke="currentColor" strokeWidth="2" opacity="0.2"/>
+      <circle cx="40" cy="40" r="32" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
+      <path d="M40 20L44 32L56 32L46 40L50 52L40 44L30 52L34 40L24 32L36 32L40 20Z" fill="currentColor" opacity="0.15"/>
+    </svg>
+    <div className="absolute inset-0 flex items-center justify-center font-serif font-bold text-2xl">
+      {children}
+    </div>
+  </div>
+);
+
 export const Certifications: React.FC = () => {
   const certifications = [
     {
@@ -70,12 +83,9 @@ export const Certifications: React.FC = () => {
                 style={{ backgroundColor: 'var(--gold)' }}
               ></div>
 
-              {/* Badge name */}
-              <div
-                className="font-serif text-4xl font-bold mb-2"
-                style={{ color: 'var(--navy)' }}
-              >
-                {cert.name}
+              {/* Badge SVG */}
+              <div className="transition-premium group-hover:scale-110" style={{ color: 'var(--gold)' }}>
+                <CertBadge>{cert.name}</CertBadge>
               </div>
 
               {/* Subtitle */}
