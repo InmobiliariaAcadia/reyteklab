@@ -5,7 +5,10 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { WhyReytek } from './components/WhyReytek';
 import { Difference } from './components/Difference';
+import { Testimonial } from './components/Testimonial';
+import { Process } from './components/Process';
 import { DigitalSection } from './components/DigitalSection';
+import { Certifications } from './components/Certifications';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
@@ -29,7 +32,10 @@ const App: React.FC = () => {
         <TrustBar />
         <WhyReytek />
         <Difference />
+        <Testimonial />
+        <Process />
         <DigitalSection />
+        <Certifications />
         <CTASection />
       </main>
       <Footer />
